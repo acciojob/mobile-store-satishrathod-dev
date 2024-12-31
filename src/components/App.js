@@ -14,8 +14,16 @@ const App = () => {
     // Add more products as needed
   ]);
 
-  const handleEdit = (index) => {
-    // Implement edit functionality
+  const handleEdit = (index, updatedProduct) => {
+    console.log("Editing product:", products[index]);
+    setProducts((prevProducts) => {
+      const updatedProducts = [...prevProducts];
+      updatedProducts[index] = {
+        ...updatedProducts[index],
+        ...updatedProduct,
+      };
+      return updatedProducts;
+    });
   };
 
   const handleDelete = (index) => {
