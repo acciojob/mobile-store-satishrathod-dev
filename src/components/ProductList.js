@@ -8,7 +8,9 @@ const ProductList = ({ products }) => {
       <ul>
         {products.map((product, index) => (
           <li key={index}>
-            <Link to={`/products/${index}`}>{product.name}</Link>
+            <Link to={`/products/${index}`} className="btn">
+              {product.name}
+            </Link>
           </li>
         ))}
       </ul>
